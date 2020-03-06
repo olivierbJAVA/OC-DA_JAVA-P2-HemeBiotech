@@ -38,6 +38,7 @@ public class WriteSymptomsToFile<K, V> {
 		try {
 			FileWriter writer = new FileWriter(filepathOutput);
 
+			//for(Set<Entry<K, V>> eltMap:tmResultSymptoms){}
 			while (itMap.hasNext()) {
 				Entry<K, V> eltMap = itMap.next();
 				System.out.println(eltMap.getKey() + " : " + eltMap.getValue());

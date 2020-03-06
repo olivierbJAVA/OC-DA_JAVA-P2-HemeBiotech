@@ -27,12 +27,14 @@ public class AnalyticsCounter extends AnalyticsGeneric {
 	public void analyseSymptoms() {
 
 		tmCountSymptoms = new TreeMap<>();
-
-		ListIterator<String> itListSymptoms = inputSymptoms.listIterator();
-
-		while (itListSymptoms.hasNext()) {
-			String eltListSymptoms = itListSymptoms.next();
-			tmCountSymptoms.put(eltListSymptoms, (Integer) Collections.frequency(inputSymptoms, eltListSymptoms));
+		
+		for(String eltListSymptoms:inputSymptoms) {
+			if(!tmCountSymptoms.containsKey(eltListSymptoms)){
+				tmCountSymptoms.put(eltListSymptoms,1);
+			}
+			else {
+				tmCountSymptoms.replace(eltListSymptoms, tmCountSymptoms.get(eltListSymptoms)+1);
+			}
 		}
 	}
 

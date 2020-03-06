@@ -28,11 +28,8 @@ public class AnalyticsMedicine extends AnalyticsGeneric {
 
 		tmMedicineSymptoms = new TreeMap<>();
 
-		ListIterator<String> itListSymptoms = inputSymptoms.listIterator();
-
-		while (itListSymptoms.hasNext()) {
-			String eltListSymptoms = itListSymptoms.next();
-			tmMedicineSymptoms.put(eltListSymptoms, "Medicine_" + eltListSymptoms);
+		for(String eltListSymptoms:inputSymptoms) {
+			tmMedicineSymptoms.put(eltListSymptoms,"Medicine_" + eltListSymptoms);
 		}
 	}
 
