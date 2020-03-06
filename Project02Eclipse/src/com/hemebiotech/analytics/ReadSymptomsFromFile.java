@@ -7,19 +7,23 @@ import java.util.*;
  * Read the input list of symptoms from a file and put them in a ArrayList
  */
 
-public class ReadSymptomsFromFile {
+public class ReadSymptomsFromFile implements ISymptomReader {
 
-	private String filepathInput;
-	
 	/**
-	 * @param filepathInput : a full or partial path to file with symptom strings in it, one per line
+	 * A full or partial path to file with symptom strings in it, one per line
+	 */	
+	private String filepathInput;
+
+	/**
+	 * @param filepathInput
+	 * A full or partial path to file with symptom strings in it, one per line
 	 */	
 	public ReadSymptomsFromFile(String filepathInput) {
 		this.filepathInput = filepathInput;
 	}
-	
+
 	/**
-	 * @return ArrayList<String> : a ArrayList of Strings containing the list of symptoms not sorted and possibly with duplications
+	 * @return An ArrayList of Strings containing the list of symptoms not sorted and possibly with duplications
 	 */
 	public ArrayList<String> getSymptoms() {
 
