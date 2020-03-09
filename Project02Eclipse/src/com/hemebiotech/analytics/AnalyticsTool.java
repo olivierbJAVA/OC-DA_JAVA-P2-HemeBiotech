@@ -1,6 +1,7 @@
 package com.hemebiotech.analytics;
 
 import java.util.ArrayList;
+import java.util.TreeMap;
 
 public class AnalyticsTool {
 	
@@ -9,40 +10,29 @@ public class AnalyticsTool {
 		//Input file containing the list of symptoms
 		String filepathInput = "C:\\Users\\olivi\\OneDrive\\Bureau\\OCR\\Projet2\\Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application\\Project02Eclipse\\symptoms.txt";
 		
-		//First we read the input list of symptoms from the input file and put them in a ArrayList
-		ReadSymptomsFromFile readSymptomsFromFile = new ReadSymptomsFromFile(filepathInput);
-		ArrayList<String> inputListSymptoms = readSymptomsFromFile.getSymptoms();
-
-		//'Counter' type analysis
-		AnalyticsCounter analyticsCounter = new AnalyticsCounter(inputListSymptoms);
+		//Output file to write the result
+		String filepathOutput = "C:\\Users\\olivi\\OneDrive\\Bureau\\OCR\\Projet2\\Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application\\Project02Eclipse\\result.out";
+		
+		//we create a counter type analysis by setting its strategies
+		AnalysisCounter counterAnalysis = new AnalysisCounter(new ReadSymptomsFromFile(filepathInput), new PerformCounterAnalysis(), new WriteResultToFile(filepathOutput));
+		
+		//we get the input
+		ArrayList<String> inputListSymptomsCounter = counterAnalysis.getInput();
+		
 		//we perform the analysis
-		analyticsCounter.analyseSymptoms();	
-		//we generate the output
-		analyticsCounter.generateOutput();
+		TreeMap<String, Integer> tmResultSymptomsCounter = counterAnalysis.analyse(inputListSymptomsCounter);
 		
-		//'Medicine' type analysis
-		AnalyticsMedicine analyticsMedicine = new AnalyticsMedicine(inputListSymptoms);
-		//we perform the analysis
-		analyticsMedicine.analyseSymptoms();	
-		//we generate the output
-		analyticsMedicine.generateOutput();
+		//we return the output
+		counterAnalysis.returnOutput(tmResultSymptomsCounter);
+		
+		//we set a different output strategy
+		counterAnalysis.setResultWriter(new WriteResultToConsole());
+		counterAnalysis.returnOutput(counterAnalysis.analyse(counterAnalysis.getInput()));
+		
+		//medicine type analysis
+		AnalysisMedicine medicineAnalysis = new AnalysisMedicine(new ReadSymptomsFromFile(filepathInput), new PerformMedicineAnalysis(), new WriteResultToConsole());
 
-		/*
-		Version avec un tableau utilisant le polymorphisme
-		
-		AnalyticsGeneric [] analyticsGenericTable = new AnalyticsGeneric [2];
-		
-		analyticsGenericTable[0] = new AnalyticsCounter(inputListSymptoms);
-		analyticsGenericTable[1] = new AnalyticsMedicine(inputListSymptoms);
-		
-		//for each analysis :
-		for (AnalyticsGeneric analyticsGeneric : analyticsGenericTable) {
-			//we perform the analysis
-			analyticsGeneric.analyseSymptoms();
-			//we generate the output
-			analyticsGeneric.generateOutput();
-		}
-		*/
+		medicineAnalysis.returnOutput(medicineAnalysis.analyse(medicineAnalysis.getInput()));
 	}
 
 }

@@ -7,7 +7,7 @@ import java.util.*;
  * Read the input list of symptoms from a file and put them in a ArrayList
  */
 
-public class ReadSymptomsFromFile implements ISymptomReader {
+public class ReadSymptomsFromFile implements ISymptomsReader {
 
 	/**
 	 * A full or partial path to file with symptom strings in it, one per line
@@ -23,8 +23,11 @@ public class ReadSymptomsFromFile implements ISymptomReader {
 	}
 
 	/**
+	 * Return an ArrayList of Strings containing the list of symptoms not sorted and possibly with duplications
+	 * 
 	 * @return An ArrayList of Strings containing the list of symptoms not sorted and possibly with duplications
 	 */
+	@Override
 	public ArrayList<String> getSymptoms() {
 
 		ArrayList<String> inputListSymptoms = new ArrayList<String>();
