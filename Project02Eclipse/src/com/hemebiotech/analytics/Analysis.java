@@ -8,7 +8,7 @@ import java.util.TreeMap;
 */
 public abstract class Analysis<K,V> {
 		
-	protected ISymptomsReader symptomsReader; //= new ReadSymptomsFromFile();
+	protected ISymptomsReader symptomsReader;
 	protected IAnalysisPerform<K,V> analysisPerform;
 	protected IResultWriter<K,V> resultWriter;
 	
