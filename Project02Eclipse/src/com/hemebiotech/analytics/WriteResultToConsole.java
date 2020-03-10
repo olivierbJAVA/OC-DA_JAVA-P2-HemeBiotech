@@ -1,7 +1,6 @@
 package com.hemebiotech.analytics;
 
 import java.util.*;
-import java.util.Map.*;
 
 /**
  * Write the result of an analysis contained in a TreeMap to the console <br/>
@@ -19,13 +18,8 @@ public class WriteResultToConsole<K, V> implements IResultWriter<K, V> {
 	@Override
 	public void writeResult(TreeMap<K, V> tmResultSymptoms) {
 
-		Set<Entry<K, V>> setTm = tmResultSymptoms.entrySet();
-		Iterator<Entry<K, V>> itMap = setTm.iterator();
-
-		while (itMap.hasNext()) {
-			Entry<K, V> eltMap = itMap.next();
-			System.out.println(eltMap.getKey() + " : " + eltMap.getValue());
+		for (Map.Entry<K,V> mapentry : tmResultSymptoms.entrySet()) {
+			System.out.println(mapentry.getKey() + " : " + mapentry.getValue());
 		}
-
 	}
 }

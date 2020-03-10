@@ -1,9 +1,6 @@
 package com.hemebiotech.analytics;
 
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Scanner;
-import java.util.TreeMap;
+import java.util.*;
 
 public class AnalyticsTool {
 	
@@ -17,7 +14,7 @@ public class AnalyticsTool {
 		
 		Scanner console = new Scanner(System.in);
 		
-		System.out.println("Hello and welcome to the AnalyticsTool !");
+		System.out.println("Hello and welcome to the Analytics Tool !");
 		System.out.println("Please choose the type of analysis you want to perform :");
 		
 		//we ask the user to choose the type of analysis he wants to perform
@@ -25,14 +22,18 @@ public class AnalyticsTool {
 		boolean analysisChoiceOk = false;
 		
 		do {
-			System.out.println("- For a Counter analysis : please type 1");
-			System.out.println("- For a Medicine analysis : please type 2");
+			System.out.println("-> For a Counter analysis : please type 1");
+			System.out.println("-> For a Medicine analysis : please type 2");
 			try {
 				analysisChoice = console.nextInt();
-				analysisChoiceOk=(analysisChoice==1 | analysisChoice==2);
+				analysisChoiceOk=(analysisChoice==1 || analysisChoice==2);
 			}
 			catch (InputMismatchException e) {
 				console.next();
+			}
+			catch (Exception e) {
+				System.out.println("Error, program exit");
+				System.exit(0);
 			}
 			if(!analysisChoiceOk) {
 				System.out.println("Error, please choose again :");
