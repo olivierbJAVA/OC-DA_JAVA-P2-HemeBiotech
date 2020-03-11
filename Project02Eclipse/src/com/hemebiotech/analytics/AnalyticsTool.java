@@ -48,7 +48,7 @@ public class AnalyticsTool {
 			System.out.println("You have choosen a Counter analysis. The analysis has been performed and the result is in the result.out file.");
 		
 			//we create a counter type analysis by setting its strategies
-			AnalysisCounter counterAnalysis = new AnalysisCounter(new ReadSymptomsFromFile(filepathInput), new PerformCounterAnalysis(), new WriteResultToFile(filepathOutput));
+			AnalysisCounter counterAnalysis = new AnalysisCounter(new ReadSymptomsFromFile(filepathInput), new PerformCounterAnalysis(), new WriteResultToFile<String,Integer>(filepathOutput));
 			
 			//we get the input
 			ArrayList<String> inputListSymptomsCounter = counterAnalysis.getInput();
@@ -60,7 +60,7 @@ public class AnalyticsTool {
 			counterAnalysis.returnOutput(tmResultSymptomsCounter);
 			/*
 			//we set a different output strategy
-			counterAnalysis.setResultWriter(new WriteResultToConsole());
+			counterAnalysis.setResultWriter(new WriteResultToConsole<String,Integer>());
 			counterAnalysis.returnOutput(counterAnalysis.analyse(counterAnalysis.getInput()));
 			*/
 		
@@ -69,7 +69,7 @@ public class AnalyticsTool {
 			System.out.println("You have choosen a Medicine analysis. Please find the result below :");
 		
 			//medicine type analysis
-			AnalysisMedicine medicineAnalysis = new AnalysisMedicine(new ReadSymptomsFromFile(filepathInput), new PerformMedicineAnalysis(), new WriteResultToConsole());
+			AnalysisMedicine medicineAnalysis = new AnalysisMedicine(new ReadSymptomsFromFile(filepathInput), new PerformMedicineAnalysis(), new WriteResultToConsole<String,String>());
 
 			medicineAnalysis.returnOutput(medicineAnalysis.analyse(medicineAnalysis.getInput()));
 		}
