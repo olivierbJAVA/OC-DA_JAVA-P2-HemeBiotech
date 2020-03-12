@@ -1,12 +1,9 @@
-package com.hemebiotech.analytics;
+package com.hemebiotech.analytics.util;
 
-import java.util.ArrayList;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Anything that will perform an analysis <br/>
- * Input : a List of String <br/>
- * Output : a TreeMap <br/>
  * Generic Interface
  */
 public interface IAnalysisPerform<K,V> {

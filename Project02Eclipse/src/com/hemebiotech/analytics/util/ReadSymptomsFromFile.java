@@ -1,12 +1,11 @@
-package com.hemebiotech.analytics;
+package com.hemebiotech.analytics.util;
 
 import java.io.*;
 import java.util.*;
 
 /**
- * Read the input list of symptoms from a file and put them in a ArrayList
+ * Read the input list of symptoms from a file and put them in an ArrayList
  */
-
 public class ReadSymptomsFromFile implements ISymptomsReader {
 
 	/**
@@ -23,7 +22,7 @@ public class ReadSymptomsFromFile implements ISymptomsReader {
 	}
 
 	/**
-	 * Return an ArrayList of Strings containing the list of symptoms not sorted and possibly with duplications
+	 * Return the list of symptoms
 	 * 
 	 * @return An ArrayList of Strings containing the list of symptoms not sorted and possibly with duplications
 	 */

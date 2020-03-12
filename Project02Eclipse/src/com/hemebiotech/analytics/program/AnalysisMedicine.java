@@ -1,4 +1,6 @@
-package com.hemebiotech.analytics;
+package com.hemebiotech.analytics.program;
+
+import com.hemebiotech.analytics.util.*;
 
 /**
  * Concrete class to be used to perform a Medicine type analysis

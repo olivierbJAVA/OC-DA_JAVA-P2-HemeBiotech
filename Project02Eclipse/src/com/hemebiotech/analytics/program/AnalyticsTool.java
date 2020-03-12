@@ -1,6 +1,8 @@
-package com.hemebiotech.analytics;
+package com.hemebiotech.analytics.program;
 
 import java.util.*;
+import com.hemebiotech.analytics.util.*;
+
 
 public class AnalyticsTool {
 	

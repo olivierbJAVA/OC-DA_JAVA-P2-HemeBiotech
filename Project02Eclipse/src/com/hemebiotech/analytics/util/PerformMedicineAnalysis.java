@@ -1,7 +1,6 @@
-package com.hemebiotech.analytics;
+package com.hemebiotech.analytics.util;
 
-import java.util.ArrayList;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Medicine type analysis Strategy

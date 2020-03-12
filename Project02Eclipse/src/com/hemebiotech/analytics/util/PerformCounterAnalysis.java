@@ -1,7 +1,6 @@
-package com.hemebiotech.analytics;
+package com.hemebiotech.analytics.util;
 
-import java.util.ArrayList;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Counter type analysis Strategy
@@ -10,7 +9,7 @@ import java.util.TreeMap;
 public class PerformCounterAnalysis implements IAnalysisPerform<String, Integer> {
 	
 	/**
-	 * Performing a counter type analysis
+	 * Perform a counter type analysis
 	 * 
 	 * @param inputListSymptoms
 	 * An ArrayList of Strings containing the list of symptoms not sorted and possibly with duplications

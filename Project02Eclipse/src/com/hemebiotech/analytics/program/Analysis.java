@@ -1,7 +1,7 @@
-package com.hemebiotech.analytics;
+package com.hemebiotech.analytics.program;
 
-import java.util.ArrayList;
-import java.util.TreeMap;
+import java.util.*;
+import com.hemebiotech.analytics.util.*;
 
 /** Abstract class containing generic elements of an analysis <br/>
 *	To be inherited to implement concrete analysis
@@ -19,7 +19,7 @@ public abstract class Analysis<K,V> {
 	}
 	
 	/**
-	 * Return an ArrayList of Strings containing the list of symptoms not sorted and possibly with duplications
+	 * Get the input
 	 * 
 	 * @return An ArrayList of Strings containing the list of symptoms not sorted and possibly with duplications
 	 */
@@ -40,7 +40,7 @@ public abstract class Analysis<K,V> {
 	}
 	
 	/**
-	 * Return the result contained in a TreeMap
+	 * Return the result
 	 * 
 	 * @param tmResultSymptoms
 	 * A TreeMap of Keys / Values, sorted by Keys.

@@ -1,4 +1,4 @@
-package com.hemebiotech.analytics;
+package com.hemebiotech.analytics.util;
 
 import java.io.*;
 import java.util.*;
@@ -7,7 +7,6 @@ import java.util.*;
  * Write the result of an analysis contained in a TreeMap to a file <br/>
  * Generic class
  */
-
 public class WriteResultToFile<K, V> implements IResultWriter<K, V>  {
 
 	/**
@@ -24,7 +23,7 @@ public class WriteResultToFile<K, V> implements IResultWriter<K, V>  {
 	}
 
 	/**
-	 * Write the results contained in a TreeMap to a file
+	 * Write the results of an analysis to a file
 	 * 
 	 * @param tmResultSymptoms
 	 * A TreeMap of Keys / Values, sorted by Keys.

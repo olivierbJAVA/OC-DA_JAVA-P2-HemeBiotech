@@ -1,4 +1,4 @@
-package com.hemebiotech.analytics;
+package com.hemebiotech.analytics.util;
 
 import java.util.*;
 
@@ -10,7 +10,7 @@ import java.util.*;
 public class WriteResultToConsole<K, V> implements IResultWriter<K, V> {
 
 	/**
-	 * Write the results contained in a TreeMap to the console
+	 * Write the results of an analysis to the console
 	 * 
 	 * @param tmResultSymptoms 
 	 * A TreeMap of Keys / Values, sorted by Keys.
