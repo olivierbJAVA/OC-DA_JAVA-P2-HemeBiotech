@@ -11,6 +11,7 @@ import java.util.*;
  * 
  */
 public interface ISymptomsReader {
+	
 	/**
 	 * Get the input
 	 * 

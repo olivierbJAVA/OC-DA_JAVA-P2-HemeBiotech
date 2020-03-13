@@ -5,7 +5,6 @@ import java.util.*;
 /**
  * Counter type analysis Strategy
  */
-
 public class PerformCounterAnalysis implements IAnalysisPerform<String, Integer> {
 	
 	/**
@@ -32,4 +31,3 @@ public class PerformCounterAnalysis implements IAnalysisPerform<String, Integer>
 		return tmCountSymptoms;
 	}
 }
-

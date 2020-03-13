@@ -43,4 +43,3 @@ public class WriteResultToFile<K, V> implements IResultWriter<K, V>  {
 		}
 	}
 }
-

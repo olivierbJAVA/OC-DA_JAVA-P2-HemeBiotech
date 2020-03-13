@@ -7,6 +7,7 @@ import java.util.*;
  * Generic Interface
  */
 public interface IResultWriter<K, V> {
+	
 	/**
 	 * Return the result of an analysis
 	 * 
