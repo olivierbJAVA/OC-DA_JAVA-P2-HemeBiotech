@@ -1,4 +1,4 @@
-package com.hemebiotech.analytics.util;
+package com.hemebiotech.analytics.services;
 
 import java.io.*;
 import java.util.*;
@@ -11,14 +11,14 @@ public class ReadSymptomsFromFile implements ISymptomsReader {
 	/**
 	 * A full or partial path to file with symptom strings in it, one per line
 	 */	
-	private String filepathInput;
+	private File filePathInput;
 
 	/**
-	 * @param filepathInput
+	 * @param filePathInput
 	 * A full or partial path to file with symptom strings in it, one per line
 	 */	
-	public ReadSymptomsFromFile(String filepathInput) {
-		this.filepathInput = filepathInput;
+	public ReadSymptomsFromFile(File filePathInput) {
+		this.filePathInput = filePathInput;
 	}
 
 	/**
@@ -31,9 +31,9 @@ public class ReadSymptomsFromFile implements ISymptomsReader {
 
 		ArrayList<String> inputListSymptoms = new ArrayList<String>();
 
-		if (filepathInput != null) {
+		if (filePathInput != null) {
 			try {
-				BufferedReader reader = new BufferedReader(new FileReader(filepathInput));
+				BufferedReader reader = new BufferedReader(new FileReader(filePathInput));
 				String line = reader.readLine();
 
 				while (line != null) {

@@ -1,7 +1,7 @@
-package com.hemebiotech.analytics.program;
+package com.hemebiotech.analytics.model;
 
 import java.util.*;
-import com.hemebiotech.analytics.util.*;
+import com.hemebiotech.analytics.services.*;
 
 /** Abstract class containing generic elements of an analysis <br/>
 *	To be inherited to implement concrete analysis

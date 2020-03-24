@@ -1,4 +1,4 @@
-package com.hemebiotech.analytics.util;
+package com.hemebiotech.analytics.services;
 
 import java.io.*;
 import java.util.*;
@@ -12,14 +12,14 @@ public class WriteResultToFile<K, V> implements IResultWriter<K, V>  {
 	/**
 	 * A full or partial path to file that should contain the analysis result
 	 */	
-	private String filepathOutput;
+	private File filePathOutput;
 
 	/**
-	 * @param filepathOutput
+	 * @param filPathOutput
 	 * A full or partial path to file that should contain the analysis result
 	 */	
-	public WriteResultToFile(String filepathOutput) {
-		this.filepathOutput = filepathOutput;
+	public WriteResultToFile(File filePathOutput) {
+		this.filePathOutput = filePathOutput;
 	}
 
 	/**
@@ -32,7 +32,7 @@ public class WriteResultToFile<K, V> implements IResultWriter<K, V>  {
 	public void writeResult(TreeMap<K, V> tmResultSymptoms) {
 
 		try {
-			FileWriter writer = new FileWriter(filepathOutput);
+			FileWriter writer = new FileWriter(filePathOutput);
 
 			for (Map.Entry<K,V> mapentry : tmResultSymptoms.entrySet()) {
 				writer.write(mapentry.getKey() + " : " + mapentry.getValue() + "\n");

@@ -1,6 +1,6 @@
-package com.hemebiotech.analytics.program;
+package com.hemebiotech.analytics.model;
 
-import com.hemebiotech.analytics.util.*;
+import com.hemebiotech.analytics.services.*;
 
 /**
  * Concrete class to be used to perform a Counter type analysis
