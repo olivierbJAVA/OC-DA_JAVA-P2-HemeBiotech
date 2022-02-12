@@ -1,4 +1,4 @@
-# Project Analytics Tool
+# HemeBiotech - Project Analytics Tool
 Heme Biotech is a company working in the pharmaceutical sector developing treatments for humans and animals.
 
 The goal of this project is to develop a program to analyze the symptoms of the treatments. 
